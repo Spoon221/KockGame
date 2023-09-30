@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     private CompositeDisposable subscriptions = new CompositeDisposable();
 
-    [SerializeField] private float limitX;
+    [SerializeField] private float limitX = 1.3f;
     [SerializeField] private float sidewaySpeed;
     [SerializeField] private Transform playerModel;
 
