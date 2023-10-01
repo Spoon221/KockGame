@@ -7,23 +7,18 @@ public class MapGenerator : MonoBehaviour
     public GameObject[] ItemSpawn;
     public List<Transform> SpawnPoints;
 
-    [Header("Кол-во предметов на слое")]
-    [SerializeField] private int shouldSpawn;
-
     void Start()
     {
         SpawnPoints = new List<Transform>(SpawnPoints);
         Spawn();
     }
 
-    public void Spawn()
+    void Spawn()
     {
-        var spawnCount = Mathf.Min(shouldSpawn, SpawnPoints.Count);
-
-        for (var i = 0; i < spawnCount; i++)
+        for (var i = 0; i < 6; i++)
         {
             var spawnIndex = Random.Range(0, SpawnPoints.Count);
-            var newItem = Instantiate(ItemSpawn[Random.Range(0, ItemSpawn.Length)], SpawnPoints[spawnIndex].position, Quaternion.identity);
+            GameObject newItem = Instantiate(ItemSpawn[Random.Range(0, ItemSpawn.Length)], SpawnPoints[spawnIndex].transform.position, Quaternion.identity);
             SpawnPoints.RemoveAt(spawnIndex);
         }
     }
