@@ -3139,10 +3139,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1a8e19325859c4a86071ec0b46bbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Block: {fileID: 4971014254816295402, guid: 29e559902f99f2349814b43d0fe54c1c, type: 3}
-  Bomb: {fileID: 3621569471849546553, guid: 2309a2029879f0141bacc8f498be0062, type: 3}
-  maps: []
-  Activemaps: []
+  ItemSpawn: []
+  SpawnPoints: []
 --- !u!4 &2043553981
 Transform:
   m_ObjectHideFlags: 0

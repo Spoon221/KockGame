@@ -17,7 +17,7 @@ public class MapGenerator : MonoBehaviour
     {
         for (var i = 0; i < 6; i++)
         {
-            int spawnIndex = Random.Range(0, SpawnPoints.Count);
+            var spawnIndex = Random.Range(0, SpawnPoints.Count);
             GameObject newItem = Instantiate(ItemSpawn[Random.Range(0, ItemSpawn.Length)], SpawnPoints[spawnIndex].transform.position, Quaternion.identity);
             SpawnPoints.RemoveAt(spawnIndex);
         }
