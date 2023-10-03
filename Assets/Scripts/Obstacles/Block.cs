@@ -4,8 +4,8 @@ using DG.Tweening;
 
 public class Block : MonoBehaviour
 {
-    [Header ("Size & Color")]
-    [SerializeField] private int startingSize;
+    [Header("Size & Color")]
+    [SerializeField] public int startingSize;
     [SerializeField] private Material[] blockColor;
     [SerializeField] private MeshRenderer blockMesh;
 
@@ -16,6 +16,7 @@ public class Block : MonoBehaviour
 
     private void Awake()
     {
+        startingSize = Random.Range(2, 10);
         completeBlock.SetActive(true);
         brokenBlock.SetActive(false);
         blockSizeText.text = startingSize.ToString();
