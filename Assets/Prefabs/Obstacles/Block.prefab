@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3828212631032741098}
   - component: {fileID: 3629201369010888959}
-  - component: {fileID: 218519099589333137}
   - component: {fileID: 5021960387756445836}
   m_Layer: 0
   m_Name: BlockSize
@@ -81,14 +80,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!222 &218519099589333137
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3021588063434658103}
-  m_CullTransparentMesh: 0
 --- !u!114 &5021960387756445836
 MonoBehaviour:
   m_ObjectHideFlags: 0
