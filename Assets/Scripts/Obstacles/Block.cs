@@ -5,7 +5,7 @@ using DG.Tweening;
 public class Block : MonoBehaviour
 {
     [Header("Size & Color")]
-    [SerializeField] public int startingSize;
+    private int startingSize;
     [SerializeField] private Material[] blockColor;
     [SerializeField] private MeshRenderer blockMesh;
 
