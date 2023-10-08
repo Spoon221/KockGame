@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53223cef2edf18542bbc1ff10a4a379e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minPosition: {x: 0.452, y: 2.72, z: -2.77}
+  minPosition: {x: -0.91, y: 2.72, z: -2.77}
   maxPosition: {x: 0.452, y: 4.08, z: -5.11}
   winPosition: {x: 0, y: 3.19, z: -3.58}
 --- !u!1 &3110143352672982263
