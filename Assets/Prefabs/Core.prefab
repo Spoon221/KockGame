@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minPosition: {x: -0.91, y: 2.72, z: -2.77}
   maxPosition: {x: 0.452, y: 4.08, z: -5.11}
-  winPosition: {x: 0, y: 3.19, z: -3.58}
+  winPosition: {x: -0.91, y: 3.2, z: -2.77}
 --- !u!1 &3110143352672982263
 GameObject:
   m_ObjectHideFlags: 0
