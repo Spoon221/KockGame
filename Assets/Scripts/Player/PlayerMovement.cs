@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         StartCoroutine(Subscribe());
     }
+
     private IEnumerator Subscribe()
     {
         yield return new WaitUntil(() => GameEvents.instance != null);

@@ -3,8 +3,13 @@ using UnityEngine.SceneManagement;
 
 public class LoadingManager : MonoBehaviour
 {
-    private void Awake()
+    public void LoadScene()
     {
-        SceneManager.LoadScene(PlayerPrefs.GetInt("loadingLevel", 1));  
+        SceneManager.LoadScene(PlayerPrefs.GetInt("loadingLevel", 1));
+    }
+
+    public void ExitGame()
+    {
+        Application.Quit();
     }
 }
