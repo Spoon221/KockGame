@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
 public class UIManager : MonoBehaviour
 {
     private CompositeDisposable subscriptions = new CompositeDisposable();
@@ -10,13 +11,17 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gameUI;
     [SerializeField] private GameObject winUI;
     [SerializeField] private GameObject loseUI;
+    [SerializeField] private GameObject settingsUI;
+    private bool settingsOpen = false;
 
     private void OnEnable()
     {
         StartCoroutine(Subscribe());
         gameUI.SetActive(true);
         startUI.SetActive(true);
+        settingsUI.SetActive(false);
     }
+
     private IEnumerator Subscribe()
     {
         yield return new WaitUntil(() => GameEvents.instance != null);
@@ -56,15 +61,38 @@ public class UIManager : MonoBehaviour
         startUI.SetActive(false);
         winUI.SetActive(false);
         loseUI.SetActive(false);
+        //settingsUI.SetActive(false);
 
         _menu.SetActive(true);
     }
 
-    //Level functions
+    public void SettingsMenu()
+    {
+        if (settingsOpen)
+        { 
+            Time.timeScale = 1f;
+            settingsUI.SetActive(false);
+            settingsOpen = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            settingsUI.SetActive(true);
+            settingsOpen = true;
+        }
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+        Debug.Log("Вышел");
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
     public void NextLevel()
     {
         int newCurrentLevel = PlayerPrefs.GetInt("currentLevel", 1) + 1;

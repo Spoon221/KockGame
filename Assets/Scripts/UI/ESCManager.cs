@@ -1,10 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
-
-public class ESCManager : MonoBehaviour
+using UnityEngine.EventSystems;
+public class ESCManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public Slider volumeSlider;
     private float volume;
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("Мышка находится на кнопке");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("Мышка покинула кнопку");
+    }
 
     void Start()
     {
