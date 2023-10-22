@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RandomTest.unity
     guid: f1d948bf44ec454438acdac2a0e21578
+  - enabled: 1
+    path: Assets/Scenes/SceneForRandomRoad.unity
+    guid: a053e55a35404474d9e50af77130b161
   m_configObjects: {}

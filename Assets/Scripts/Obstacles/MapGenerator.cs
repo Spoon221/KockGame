@@ -10,9 +10,6 @@ public class MapGenerator : MonoBehaviour
     [Header("Кол-во предметов на слое")]
     [SerializeField] private int shouldSpawn;
 
-    //[Header("Какое число на блоках будет")]
-    //[SerializeField] public Block block;
-
     void Start()
     {
         SpawnPoints = new List<Transform>(SpawnPoints);
@@ -25,9 +22,9 @@ public class MapGenerator : MonoBehaviour
 
         for (var i = 0; i < spawnCount; i++)
         {
+            Quaternion spawnRotation = transform.rotation;
             var spawnIndex = Random.Range(0, SpawnPoints.Count);
-            var newItem = Instantiate(ItemSpawn[Random.Range(0, ItemSpawn.Length)], SpawnPoints[spawnIndex].position, Quaternion.identity);
-            //block.startingSize = Random.Range(1, 10);
+            var newItem = Instantiate(ItemSpawn[Random.Range(0, ItemSpawn.Length)], SpawnPoints[spawnIndex].position, spawnRotation);
             SpawnPoints.RemoveAt(spawnIndex);
         }
     }
