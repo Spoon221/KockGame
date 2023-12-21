@@ -1,41 +1,32 @@
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.EventSystems;
-public class ESCManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+
+public class ESCManager : MonoBehaviour
 {
     public Slider volumeSlider;
-    private float volume;
+    [SerializeField] private AudioSource audioSource;
+    private float currentVolume;
 
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        Debug.Log("Мышка находится на кнопке");
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        Debug.Log("Мышка покинула кнопку");
-    }
-
-    void Start()
+    private void Start()
     {
         if (PlayerPrefs.HasKey("Volume"))
+            currentVolume = 0.5f;
+        if (currentVolume != volumeSlider.value)
         {
-            volume = PlayerPrefs.GetFloat("Volume", 1f);
-            ApplyVolume();
-            volumeSlider.value = volume;
-            volumeSlider.onValueChanged.AddListener(ChangeVolume);
+            //currentVolume = PlayerPrefs.GetFloat("Volume", volumeSlider.value);
+            //volumeSlider.value = currentVolume;
+            //audioSource.volume = currentVolume;
+            PlayerPrefs.SetFloat("Volume", volumeSlider.value);
+            PlayerPrefs.Save();
+            currentVolume = volumeSlider.value;
         }
     }
 
-    private void ChangeVolume(float newVolume)
+    public void SetVolume(float volume)
     {
-        volume = newVolume;
-        ApplyVolume();
+        currentVolume = volume;
+        audioSource.volume = volume;
         PlayerPrefs.SetFloat("Volume", volume);
-    }
-
-    private void ApplyVolume()
-    {
-        AudioListener.volume = volume;
+        PlayerPrefs.Save();
     }
 }
