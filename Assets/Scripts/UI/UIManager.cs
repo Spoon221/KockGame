@@ -19,7 +19,8 @@ public class UIManager : MonoBehaviour
         StartCoroutine(Subscribe());
         gameUI.SetActive(true);
         startUI.SetActive(true);
-        settingsUI.SetActive(false);
+        if (settingsUI.GetComponent<Canvas>().enabled)
+            settingsUI.SetActive(false);
     }
 
     private IEnumerator Subscribe()
